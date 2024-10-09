@@ -1,0 +1,1568 @@
+
+
+        - sensor:
+            - name: ":  ( #41) tmpl"
+              unique_id: ovum__sensor41_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.41')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.41') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #61) tmpl"
+              unique_id: ovum__sensor61_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.61')|int in [0,1,2,3] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Electronics Compartment Fans',
+                    '1' : 'On/Stand-By',
+                    '2' : 'Sound',
+                    '3' : 'Burner Fault Reset' } %}            
+                {% set state = states('sensor.61') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #91) tmpl"
+              unique_id: ovum__sensor91_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.91')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---',
+                    '1' : 'Reset' } %}            
+                {% set state = states('sensor.91') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #111) tmpl"
+              unique_id: ovum__sensor111_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.111')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Room Temperature',
+                    '1' : 'External Temperature',
+                    '2' : 'Water Temperature' } %}
+                {% set state = states('sensor.111') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ": Real Time ( #221) tmpl"
+              unique_id: ovum__sensor221_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.real_time_221')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %} 
+                {% set state = states('sensor.real_time_221') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #231) tmpl"
+              unique_id: ovum__sensor231_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.231')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.231') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #401) tmpl"
+              unique_id: ovum__sensor401_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.401')|int in [0,1,10,11,12,13,2,3,4,5,6,7,8,9] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Disabled',
+                    '1' : 'OFF',
+                    '10' : 'Manual ON',
+                    '11' : 'Forced speed 1',
+                    '12' : 'Forced speed 2',
+                    '13' : 'Forced speed 3',
+                    '2' : 'Wait ON',
+                    '3' : 'ON',
+                    '4' : 'Wait OFF',
+                    '5' : 'Alarm',
+                    '6' : 'Manual OFF',
+                    '7' : 'Manual Speed 1',
+                    '8' : 'Manual Speed 2',
+                    '9' : 'Manual Speed 3' } %}            
+                    '9' : 'Manual Speed 3' } %}            
+                {% set state = states('sensor.401') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #511) tmpl"
+              unique_id: ovum__sensor511_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.511')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.511') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #531) tmpl"
+              unique_id: ovum__sensor531_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.531')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.531') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ": Compressor Alarm ( #561) tmpl"
+              unique_id: ovum__sensor561_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.compressor_alarm_561')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.compressor_alarm_561') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #611) tmpl"
+              unique_id: ovum__sensor611_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.611')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'None',
+                    '1' : 'HACCP',
+                    '2' : 'Service' } %}            
+                {% set state = states('sensor.611') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #621) tmpl"
+              unique_id: ovum__sensor621_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.621')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.621') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #631) tmpl"
+              unique_id: ovum__sensor631_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.631')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.631') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #641) tmpl"
+              unique_id: ovum__sensor641_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.641')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'DI Aperto = Allarme termostato attivo',
+                    '1' : 'DI chiuso = Allarme termostato attivo' } %}            
+                {% set state = states('sensor.641') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #701) tmpl"
+              unique_id: ovum__sensor701_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.701')|int in [0,1,2,3,4,5,6] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Disabled',
+                    '1' : 'Energy Saving',
+                    '2' : 'Remote Alarm',
+                    '3' : 'Button-operated Load',
+                    '4' : 'Stand-by',
+                    '5' : 'Thermal Switch',
+                    '6' : 'Global Thermal Switch' } %}            
+                {% set state = states('sensor.701') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12291) tmpl"
+              unique_id: ovum__sensor12291_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12291')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12291') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12471) tmpl"
+              unique_id: ovum__sensor12471_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12471')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12471') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ": Automatic Defrost Interval ( #12561) tmpl"
+              unique_id: ovum__sensor12561_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.automatic_defrost_interval_12561')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.automatic_defrost_interval_12561') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12621) tmpl"
+              unique_id: ovum__sensor12621_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12621')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12621') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12751) tmpl"
+              unique_id: ovum__sensor12751_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12751')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12751') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12761) tmpl"
+              unique_id: ovum__sensor12761_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12761')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12761') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #12891) tmpl"
+              unique_id: ovum__sensor12891_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.12891')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.12891') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13101) tmpl"
+              unique_id: ovum__sensor13101_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13101')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13101') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13111) tmpl"
+              unique_id: ovum__sensor13111_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13111')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13111') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13121) tmpl"
+              unique_id: ovum__sensor13121_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13121')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13121') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13181) tmpl"
+              unique_id: ovum__sensor13181_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13181')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.13181') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13191) tmpl"
+              unique_id: ovum__sensor13191_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13191')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}            
+                {% set state = states('sensor.13191') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13281) tmpl"
+              unique_id: ovum__sensor13281_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13281')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.13281') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13341) tmpl"
+              unique_id: ovum__sensor13341_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13341')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13341') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13391) tmpl"
+              unique_id: ovum__sensor13391_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13391')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13391') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13401) tmpl"
+              unique_id: ovum__sensor13401_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13401')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.13401') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13411) tmpl"
+              unique_id: ovum__sensor13411_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13411')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.13411') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13511) tmpl"
+              unique_id: ovum__sensor13511_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13511')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.13511') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13631) tmpl"
+              unique_id: ovum__sensor13631_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13631')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}            
+                {% set state = states('sensor.13631') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13661) tmpl"
+              unique_id: ovum__sensor13661_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13661')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.13661') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13921) tmpl"
+              unique_id: ovum__sensor13921_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13921')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.13921') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13971) tmpl"
+              unique_id: ovum__sensor13971_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13971')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.13971') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #13991) tmpl"
+              unique_id: ovum__sensor13991_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.13991')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.13991') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14101) tmpl"
+              unique_id: ovum__sensor14101_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14101')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.14101') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14111) tmpl"
+              unique_id: ovum__sensor14111_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14111')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.14111') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14121) tmpl"
+              unique_id: ovum__sensor14121_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14121')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}            
+                {% set state = states('sensor.14121') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14131) tmpl"
+              unique_id: ovum__sensor14131_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14131')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}            
+                {% set state = states('sensor.14131') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14421) tmpl"
+              unique_id: ovum__sensor14421_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14421')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.14421') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14431) tmpl"
+              unique_id: ovum__sensor14431_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14431')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.14431') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14441) tmpl"
+              unique_id: ovum__sensor14441_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14441')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}            
+                {% set state = states('sensor.14441') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14451) tmpl"
+              unique_id: ovum__sensor14451_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14451')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.14451') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14681) tmpl"
+              unique_id: ovum__sensor14681_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14681')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.14681') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14781) tmpl"
+              unique_id: ovum__sensor14781_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14781')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.14781') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14791) tmpl"
+              unique_id: ovum__sensor14791_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14791')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.14791') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14801) tmpl"
+              unique_id: ovum__sensor14801_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14801')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.14801') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14811) tmpl"
+              unique_id: ovum__sensor14811_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14811')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.14811') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14831) tmpl"
+              unique_id: ovum__sensor14831_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14831')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.14831') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14841) tmpl"
+              unique_id: ovum__sensor14841_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14841')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.14841') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14851) tmpl"
+              unique_id: ovum__sensor14851_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14851')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.14851') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14941) tmpl"
+              unique_id: ovum__sensor14941_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14941')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'None',
+                    '1' : 'HACCP',
+                    '2' : 'Service' } %}            
+                {% set state = states('sensor.14941') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #14951) tmpl"
+              unique_id: ovum__sensor14951_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.14951')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.14951') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15021) tmpl"
+              unique_id: ovum__sensor15021_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15021')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15021') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15051) tmpl"
+              unique_id: ovum__sensor15051_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15051')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.15051') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15101) tmpl"
+              unique_id: ovum__sensor15101_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15101')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15101') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15431) tmpl"
+              unique_id: ovum__sensor15431_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15431')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15431') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15501) tmpl"
+              unique_id: ovum__sensor15501_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15501')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15501') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15661) tmpl"
+              unique_id: ovum__sensor15661_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15661')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15661') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15681) tmpl"
+              unique_id: ovum__sensor15681_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15681')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15681') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15711) tmpl"
+              unique_id: ovum__sensor15711_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15711')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.15711') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15801) tmpl"
+              unique_id: ovum__sensor15801_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15801')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}
+                {% set state = states('sensor.15801') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15881) tmpl"
+              unique_id: ovum__sensor15881_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15881')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.15881') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #15971) tmpl"
+              unique_id: ovum__sensor15971_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.15971')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}
+                {% set state = states('sensor.15971') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16041) tmpl"
+              unique_id: ovum__sensor16041_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16041')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.16041') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16061) tmpl"
+              unique_id: ovum__sensor16061_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16061')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.16061') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16071) tmpl"
+              unique_id: ovum__sensor16071_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16071')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'None',
+                    '1' : 'HACCP',
+                    '2' : 'Service' } %}            
+                {% set state = states('sensor.16071') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16241) tmpl"
+              unique_id: ovum__sensor16241_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16241')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16241') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16341) tmpl"
+              unique_id: ovum__sensor16341_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16341')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}
+                {% set state = states('sensor.16341') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16541) tmpl"
+              unique_id: ovum__sensor16541_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16541')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'None',
+                    '1' : 'HACCP',
+                    '2' : 'Service' } %}            
+                {% set state = states('sensor.16541') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16561) tmpl"
+              unique_id: ovum__sensor16561_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16561')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.16561') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16581) tmpl"
+              unique_id: ovum__sensor16581_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16581')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16581') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16661) tmpl"
+              unique_id: ovum__sensor16661_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16661')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16661') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16681) tmpl"
+              unique_id: ovum__sensor16681_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16681')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.16681') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16691) tmpl"
+              unique_id: ovum__sensor16691_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16691')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}
+                {% set state = states('sensor.16691') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16721) tmpl"
+              unique_id: ovum__sensor16721_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16721')|int in [0,1,2,3] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Hour',
+                    '1' : 'Humidity Probe',
+                    '2' : 'Auxiliary Probe',
+                    '3' : 'Humidity setpoint' } %}
+                {% set state = states('sensor.16721') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16751) tmpl"
+              unique_id: ovum__sensor16751_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16751')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.16751') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16761) tmpl"
+              unique_id: ovum__sensor16761_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16761')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.16761') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16771) tmpl"
+              unique_id: ovum__sensor16771_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16771')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.16771') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16781) tmpl"
+              unique_id: ovum__sensor16781_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16781')|int in [0,1,2,3] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Electric',
+                    '1' : 'Aspirated Gas',
+                    '2' : 'Static Gas',
+                    '3' : 'Honeywell' } %}            
+                {% set state = states('sensor.16781') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16791) tmpl"
+              unique_id: ovum__sensor16791_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16791')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.16791') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16801) tmpl"
+              unique_id: ovum__sensor16801_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16801')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %} 
+                {% set state = states('sensor.16801') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16821) tmpl"
+              unique_id: ovum__sensor16821_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16821')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16821') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16851) tmpl"
+              unique_id: ovum__sensor16851_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16851')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16851') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16861) tmpl"
+              unique_id: ovum__sensor16861_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16861')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16861') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16911) tmpl"
+              unique_id: ovum__sensor16911_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16911')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Power',
+                    '1' : 'Temperature' } %}            
+                {% set state = states('sensor.16911') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16961) tmpl"
+              unique_id: ovum__sensor16961_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16961')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.16961') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #16981) tmpl"
+              unique_id: ovum__sensor16981_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.16981')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.16981') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17021) tmpl"
+              unique_id: ovum__sensor17021_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17021')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.17021') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17041) tmpl"
+              unique_id: ovum__sensor17041_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17041')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.17041') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17071) tmpl"
+              unique_id: ovum__sensor17071_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17071')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.17071') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17171) tmpl"
+              unique_id: ovum__sensor17171_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17171')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                  	'1' : 'Active' } %}            
+                {% set state = states('sensor.17171') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17191) tmpl"
+              unique_id: ovum__sensor17191_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17191')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17191') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17271) tmpl"
+              unique_id: ovum__sensor17271_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17271')|int in [-32764,0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : '---',
+                    '0' : 'Closed',
+                    '1' : 'Open' } %}            
+                {% set state = states('sensor.17271') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17311) tmpl"
+              unique_id: ovum__sensor17311_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17311')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17311') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17471) tmpl"
+              unique_id: ovum__sensor17471_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17471')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.17471') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17481) tmpl"
+              unique_id: ovum__sensor17481_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17481')|int in [0,1,2,3,4] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Regulation Value',
+                    '1' : 'Setpoint',
+                    '2' : 'Evaporator Probe',
+                    '3' : 'Configurable Probe',
+                    '4' : 'Air in Probe ' } %}            
+                {% set state = states('sensor.17481') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17491) tmpl"
+              unique_id: ovum__sensor17491_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17491')|int in [0,1,2,3,4] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Regulation Value',
+                    '1' : 'Setpoint',
+                    '2' : 'Evaporator Probe',
+                    '3' : 'Configurable Probe',
+                    '4' : 'Air in Probe ' } %}            
+                {% set state = states('sensor.17491') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17501) tmpl"
+              unique_id: ovum__sensor17501_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17501')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.17501') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17561) tmpl"
+              unique_id: ovum__sensor17561_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17561')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Inactive',
+                    '1' : 'Active' } %}            
+                {% set state = states('sensor.17561') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17591) tmpl"
+              unique_id: ovum__sensor17591_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17591')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.17591') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17601) tmpl"
+              unique_id: ovum__sensor17601_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17601')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17601') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17671) tmpl"
+              unique_id: ovum__sensor17671_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17671')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+                    '1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.17671') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17721) tmpl"
+              unique_id: ovum__sensor17721_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17721')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17721') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17821) tmpl"
+              unique_id: ovum__sensor17821_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17821')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17821') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17891) tmpl"
+              unique_id: ovum__sensor17891_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17891')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17891') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17941) tmpl"
+              unique_id: ovum__sensor17941_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17941')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17941') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #17991) tmpl"
+              unique_id: ovum__sensor17991_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.17991')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.17991') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18031) tmpl"
+              unique_id: ovum__sensor18031_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18031')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18031') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18081) tmpl"
+              unique_id: ovum__sensor18081_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18081')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18081') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18101) tmpl"
+              unique_id: ovum__sensor18101_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18101')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18101') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18141) tmpl"
+              unique_id: ovum__sensor18141_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18141')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18141') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18211) tmpl"
+              unique_id: ovum__sensor18211_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18211')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18211') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18321) tmpl"
+              unique_id: ovum__sensor18321_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18321')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18321') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18401) tmpl"
+              unique_id: ovum__sensor18401_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18401')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18401') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18481) tmpl"
+              unique_id: ovum__sensor18481_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18481')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18481') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18741) tmpl"
+              unique_id: ovum__sensor18741_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18741')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '-32764' : 'Disabled',
+                    '-32767' : '---',
+                    '-32768' : '---',
+                    '-32768' : 'err' } %}            
+                {% set state = states('sensor.18741') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18751) tmpl"
+              unique_id: ovum__sensor18751_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18751')|int in [-32764,0,1,32772] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+                    '0' : 'Inactive',
+                    '1' : 'Active',
+                    '32772' : 'Disabled' } %}
+                {% set state = states('sensor.18751') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18761) tmpl"
+              unique_id: ovum__sensor18761_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18761')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18761') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18771) tmpl"
+              unique_id: ovum__sensor18771_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18771')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18771') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18851) tmpl"
+              unique_id: ovum__sensor18851_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18851')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18851') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #18961) tmpl"
+              unique_id: ovum__sensor18961_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.18961')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.18961') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #19641) tmpl"
+              unique_id: ovum__sensor19641_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.19641')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.19641') %}
+                {{ mapper[state] if state in mapper}}
+
