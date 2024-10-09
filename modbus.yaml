@@ -1,6 +1,7 @@
   - name: modbus_ovum
     type: tcp
-    host: 192.168.1.61
+    host: 192.168.1.xy
+    #Natürlich hier die korrekt IP Adresse
     port: 502
     delay: 2
     message_wait_milliseconds: 30
