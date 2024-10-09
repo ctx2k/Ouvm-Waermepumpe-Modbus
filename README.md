@@ -6,3 +6,6 @@ Hergestellt und entsprechend angepasst.
 
 
 ACHTUNG: Das funktioniert so noch nicht !!!!!
+
+
+Software Regelung UP24 240626  
