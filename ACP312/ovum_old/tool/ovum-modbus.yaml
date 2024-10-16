@@ -1,0 +1,1126 @@
+modbus:
+    - name: "modbus_ovum"
+      type: tcp
+      host: 192.168.1.60
+      port: 502
+      delay: 2
+      message_wait_milliseconds: 0
+      timeout: 5
+      sensors:
+
+        - name: ":  ( #1)"         
+          unique_id: ovum__sensor1
+          address: 1
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 1
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ": Automatic Defrost Interval ( #11)"         
+          unique_id: ovum__sensor11
+          address: 11
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "min"
+          input_type: holding
+          min_value: 23
+          max_value: 0
+          slave: 247                    
+          device_class: duration
+
+        - name: ": Automatic Defrost Interval ( #21)"         
+          unique_id: ovum__sensor21
+          address: 21
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #31)"         
+          unique_id: ovum__sensor31
+          address: 31
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #41)"         
+          unique_id: ovum__sensor41
+          address: 41
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #61)"         
+          unique_id: ovum__sensor61
+          address: 61
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 293
+          max_value: 253
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #71)"         
+          unique_id: ovum__sensor71
+          address: 71
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 208
+          max_value: 10038
+          slave: 247                    
+          
+
+        - name: ":  ( #81)"         
+          unique_id: ovum__sensor81
+          address: 81
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 2000
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #91)"         
+          unique_id: ovum__sensor91
+          address: 91
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #101)"         
+          unique_id: ovum__sensor101
+          address: 101
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "mH"
+          input_type: holding
+          min_value: 452
+          max_value: 443
+          slave: 247                    
+          
+
+        - name: ":  ( #111)"         
+          unique_id: ovum__sensor111
+          address: 111
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 128
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #121)"         
+          unique_id: ovum__sensor121
+          address: 121
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 38
+          max_value: 103
+          slave: 247                    
+          device_class: temperature
+
+        - name: ": Condensation Alarm Threshold ( #201)"         
+          unique_id: ovum__sensor201
+          address: 201
+          scan_interval: 15                
+          data_type: int32
+          scale: 0.1
+          precision: 1
+          swap: word
+          unit_of_measurement: "h x 10"
+          input_type: holding
+          min_value: 0.0
+          max_value: 45.0
+          slave: 247                    
+          device_class: duration
+
+        - name: ":  ( #211)"         
+          unique_id: ovum__sensor211
+          address: 211
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "0.5 h"
+          input_type: holding
+          min_value: 40
+          max_value: 2
+          slave: 247                    
+          device_class: duration
+
+        - name: ": Real Time ( #221)"         
+          unique_id: ovum__sensor221
+          address: 221
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "x100 h"
+          input_type: holding
+          min_value: 20
+          max_value: 0
+          slave: 247                    
+          device_class: duration
+
+        - name: ":  ( #231)"         
+          unique_id: ovum__sensor231
+          address: 231
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 60
+          max_value: 70
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #241)"         
+          unique_id: ovum__sensor241
+          address: 241
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #251)"         
+          unique_id: ovum__sensor251
+          address: 251
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 1
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #301)"         
+          unique_id: ovum__sensor301
+          address: 301
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #311)"         
+          unique_id: ovum__sensor311
+          address: 311
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #351)"         
+          unique_id: ovum__sensor351
+          address: 351
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 3
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #401)"         
+          unique_id: ovum__sensor401
+          address: 401
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 182
+          max_value: 109
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #411)"         
+          unique_id: ovum__sensor411
+          address: 411
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "mm x10"
+          input_type: holding
+          min_value: 12
+          max_value: 0
+          slave: 247                    
+          device_class: distance
+
+        - name: ":  ( #421)"         
+          unique_id: ovum__sensor421
+          address: 421
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "W"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: power
+
+        - name: ":  ( #451)"         
+          unique_id: ovum__sensor451
+          address: 451
+          scan_interval: 15                
+          data_type: int32
+          scale: 1e-15
+          precision: 15
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 3.2e-14
+          max_value: 0.0
+          slave: 247                    
+          
+
+        - name: ": Condensation Alarm Threshold ( #501)"         
+          unique_id: ovum__sensor501
+          address: 501
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 253
+          max_value: 485
+          slave: 247                    
+          
+
+        - name: ":  ( #511)"         
+          unique_id: ovum__sensor511
+          address: 511
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°F"
+          input_type: holding
+          min_value: 190
+          max_value: 15
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #521)"         
+          unique_id: ovum__sensor521
+          address: 521
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 230
+          max_value: 0
+          slave: 247                    
+          
+
+        - name: ":  ( #531)"         
+          unique_id: ovum__sensor531
+          address: 531
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "Hertz"
+          input_type: holding
+          min_value: 220
+          max_value: 100
+          slave: 247                    
+          device_class: frequency
+
+        - name: ":  ( #541)"         
+          unique_id: ovum__sensor541
+          address: 541
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "rpm/s"
+          input_type: holding
+          min_value: 1
+          max_value: 1
+          slave: 247                    
+          device_class: speed
+
+        - name: ": Room device status ( #551)"         
+          unique_id: ovum__sensor551
+          address: 551
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "l/min"
+          input_type: holding
+          min_value: 500
+          max_value: 294
+          slave: 247                    
+          device_class: volume
+
+        - name: ": Compressor Alarm ( #561)"         
+          unique_id: ovum__sensor561
+          address: 561
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°F"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #571)"         
+          unique_id: ovum__sensor571
+          address: 571
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 0
+          max_value: 400
+          slave: 247                    
+          
+
+        - name: ": Real Time ( #581)"         
+          unique_id: ovum__sensor581
+          address: 581
+          scan_interval: 15                
+          data_type: int32
+          scale: 0.01
+          precision: 2
+          swap: word
+          unit_of_measurement: "x100 h"
+          input_type: holding
+          min_value: 100.0
+          max_value: 0.0
+          slave: 247                    
+          device_class: duration
+
+        - name: ":  ( #591)"         
+          unique_id: ovum__sensor591
+          address: 591
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "K"
+          input_type: holding
+          min_value: 3600
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #601)"         
+          unique_id: ovum__sensor601
+          address: 601
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #611)"         
+          unique_id: ovum__sensor611
+          address: 611
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 650
+          max_value: 10
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #621)"         
+          unique_id: ovum__sensor621
+          address: 621
+          scan_interval: 15                
+          data_type: int32
+          scale: 1e-15
+          precision: 15
+          swap: word
+          unit_of_measurement: "mA"
+          input_type: holding
+          min_value: 1e-14
+          max_value: 6.5326e-11
+          slave: 247                    
+          device_class: current
+
+        - name: ":  ( #631)"         
+          unique_id: ovum__sensor631
+          address: 631
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #641)"         
+          unique_id: ovum__sensor641
+          address: 641
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #701)"         
+          unique_id: ovum__sensor701
+          address: 701
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "hPa"
+          input_type: holding
+          min_value: 3
+          max_value: 10
+          slave: 247                    
+          device_class: pressure
+
+        - name: ":  ( #711)"         
+          unique_id: ovum__sensor711
+          address: 711
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #801)"         
+          unique_id: ovum__sensor801
+          address: 801
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "h x 10"
+          input_type: holding
+          min_value: 0
+          max_value: 30
+          slave: 247                    
+          device_class: duration
+
+        - name: ":  ( #851)"         
+          unique_id: ovum__sensor851
+          address: 851
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #901)"         
+          unique_id: ovum__sensor901
+          address: 901
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #921)"         
+          unique_id: ovum__sensor921
+          address: 921
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #931)"         
+          unique_id: ovum__sensor931
+          address: 931
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #941)"         
+          unique_id: ovum__sensor941
+          address: 941
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #951)"         
+          unique_id: ovum__sensor951
+          address: 951
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #961)"         
+          unique_id: ovum__sensor961
+          address: 961
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: ""
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          
+
+        - name: ":  ( #971)"         
+          unique_id: ovum__sensor971
+          address: 971
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #991)"         
+          unique_id: ovum__sensor991
+          address: 991
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #1101)"         
+          unique_id: ovum__sensor1101
+          address: 1101
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #1201)"         
+          unique_id: ovum__sensor1201
+          address: 1201
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #1251)"         
+          unique_id: ovum__sensor1251
+          address: 1251
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #1301)"         
+          unique_id: ovum__sensor1301
+          address: 1301
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 3
+          max_value: 3
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #1401)"         
+          unique_id: ovum__sensor1401
+          address: 1401
+          scan_interval: 15                
+          data_type: int32
+          scale: 0.1
+          precision: 1
+          swap: word
+          unit_of_measurement: "Cycles"
+          input_type: holding
+          min_value: 0.0
+          max_value: 0.0
+          slave: 247                    
+          
+
+        - name: ":  ( #1411)"         
+          unique_id: ovum__sensor1411
+          address: 1411
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #2001)"         
+          unique_id: ovum__sensor2001
+          address: 2001
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 452
+          max_value: 443
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #2051)"         
+          unique_id: ovum__sensor2051
+          address: 2051
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+        - name: ":  ( #3001)"         
+          unique_id: ovum__sensor3001
+          address: 3001
+          scan_interval: 15                
+          data_type: int32
+          scale: 1
+          precision: 0
+          swap: word
+          unit_of_measurement: "°C"
+          input_type: holding
+          min_value: 0
+          max_value: 0
+          slave: 247                    
+          device_class: temperature
+
+      template:
+
+        - sensor:
+            - name: ":  ( #41) tmpl"
+              unique_id: ovum__sensor41_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.41')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.41') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #61) tmpl"
+              unique_id: ovum__sensor61_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.61')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'INPUT OPEN',
+					'1' : 'INPUT CLOSE' } %}            
+                {% set state = states('sensor.61') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #101) tmpl"
+              unique_id: ovum__sensor101_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.101')|int in [1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '1' : 'Type A',
+					'2' : 'Type B' } %}            
+                {% set state = states('sensor.101') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #111) tmpl"
+              unique_id: ovum__sensor111_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.111')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Room Temperature',
+					'1' : 'External Temperature',
+					'2' : 'Water Temperature' } %}            
+                {% set state = states('sensor.111') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ": Real Time ( #221) tmpl"
+              unique_id: ovum__sensor221_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.real_time_221')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+					'1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.real_time_221') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #231) tmpl"
+              unique_id: ovum__sensor231_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.231')|int in [-32764,-32764,-32767,-32768,-32768] }}"
+              state: >
+                {% set mapper =  {
+                    '-32764' : 'Disabled',
+					'-32764' : 'Disabled',
+					'-32767' : '---',
+					'-32768' : '---',
+					'-32768' : 'err' } %}            
+                {% set state = states('sensor.231') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #401) tmpl"
+              unique_id: ovum__sensor401_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.401')|int in [0,1,2,3,4,5] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cooling manual',
+					'1' : 'Heating manual',
+					'2' : 'Cooling automatic',
+					'3' : 'Heating automatic',
+					'4' : 'Cooling by digital input',
+					'5' : 'Heating by digital input' } %}            
+                {% set state = states('sensor.401') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #511) tmpl"
+              unique_id: ovum__sensor511_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.511')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'Cabinet Temperature',
+					'1' : 'Evaporator Temperature' } %}            
+                {% set state = states('sensor.511') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ": Compressor Alarm ( #561) tmpl"
+              unique_id: ovum__sensor561_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.compressor_alarm_561')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.compressor_alarm_561') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #611) tmpl"
+              unique_id: ovum__sensor611_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.611')|int in [0,1,2] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'None',
+					'1' : 'HACCP',
+					'2' : 'Service' } %}            
+                {% set state = states('sensor.611') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #631) tmpl"
+              unique_id: ovum__sensor631_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.631')|int in [0] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : '---dontTranslate---' } %}            
+                {% set state = states('sensor.631') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #641) tmpl"
+              unique_id: ovum__sensor641_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.641')|int in [0,1] }}"
+              state: >
+                {% set mapper =  {
+                    '0' : 'DI Aperto = Allarme termostato attivo',
+					'1' : 'DI chiuso = Allarme termostato attivo' } %}            
+                {% set state = states('sensor.641') %}
+                {{ mapper[state] if state in mapper}}
+
+        - sensor:
+            - name: ":  ( #701) tmpl"
+              unique_id: ovum__sensor701_tmpl            
+              device_class: enum
+              availability: "{{ states('sensor.701')|int in [-1,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-2,-3,-4,-5,-6,-7,-8,-9,0,1,10,11,12,13,14,15,16,17,18,19,2,3,4,5,6,7,8,9] }}"
+              state: >
+                {% set mapper =  {
+                    '-1' : 'Supply Fan Flow Switch (NC)',
+					'-10' : 'Coil Water Antifreeze (NC)',
+					'-11' : 'Heater Thermal Switch (NC)',
+					'-12' : 'Thermostat Request (NC)',
+					'-13' : 'Dehumidifier Request (NC)',
+					'-14' : 'External Air Damper Open Limit Switch (NC)',
+					'-15' : 'External Air Damper Closed Limit Switch (NC)',
+					'-16' : 'Forced Ventilation (NC)',
+					'-17' : 'Filter Pressure Switch (NC)',
+					'-18' : 'Heat Pump Status (NC)',
+					'-19' : 'Fire Alarm (NC)',
+					'-2' : 'Return Fan Flow Switch (NC)',
+					'-3' : 'Supply Flow Switch (NC)',
+					'-4' : 'Return Flow Switch (NC)',
+					'-5' : 'High Pressure (NC)',
+					'-6' : 'Low Pressure (NC)',
+					'-7' : 'Compressor Thermal Switch (NC)',
+					'-8' : 'Remote ON-OFF (NC)',
+					'-9' : 'Coil Water Antifreeze (NC)',
+					'0' : 'Disabled',
+					'1' : 'Supply Fan Flow Switch (NO)',
+					'10' : 'Coil Water Antifreeze (NO)',
+					'11' : 'Heater Thermal Switch (NO)',
+					'12' : 'Thermostat Request (NO)',
+					'13' : 'Dehumidifier Request (NO)',
+					'14' : 'External Air Damper Open Limit Switch (NO)',
+					'15' : 'External Air Damper Closed Limit Switch (NO)',
+					'16' : 'Forced Ventilation (NO)',
+					'17' : 'Filter Pressure Switch (NO)',
+					'18' : 'Heat Pump Status (NO)',
+					'19' : 'Fire Alarm (NO)',
+					'2' : 'Return Fan Flow Switch (NO)',
+					'3' : 'Supply Flow Switch (NO)',
+					'4' : 'Return Flow Switch (NO)',
+					'5' : 'High Pressure (NO)',
+					'6' : 'Low Pressure (NO)',
+					'7' : 'Compressor Thermal Switch (NO)',
+					'8' : 'Remote ON-OFF (NO)',
+					'9' : 'Season Change (NO)' } %}            
+                {% set state = states('sensor.701') %}
+                {{ mapper[state] if state in mapper}}
+
