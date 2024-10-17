@@ -1,4 +1,4 @@
-Idx	AddrHex	AddrDec	Hex	Byte_1	Byte_2	UInt16	Int16	Chr	Bin Beschreibung
+Idx	AddrHex	AddrDec	Hex	Byte_1	Byte_2	UInt16	Int16	Chr	Bin     Beschreibung
 0	0x0001	1	00 00	0	0	0	0		0000 0000 0000 0000 
 1	0x0002	2	00 01	0	1	1	1		0000 0000 0000 0001
 2	0x0003	3	00 01	0	1	1	1		0000 0000 0000 0001
