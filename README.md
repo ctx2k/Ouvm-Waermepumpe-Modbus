@@ -1,5 +1,3 @@
-DE: HomeAssistant Ovum WP
-Dies sind zwei File für die OVUM WP mit Fernzugriff über Epoca WiFi Modul. 
 
 Grundgerüst wurde aus : https://github.com/MiScCX/ovModbus
 Hergestellt und entsprechend angepasst. 
