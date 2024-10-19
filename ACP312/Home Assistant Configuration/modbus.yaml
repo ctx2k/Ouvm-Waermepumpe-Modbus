@@ -1,0 +1,106 @@
+- name: modbus_ovum
+  type: tcp
+  host: 192.168.1.60
+  port: 502
+  delay: 2
+  message_wait_milliseconds: 30
+  timeout: 5
+  sensors:
+    - name: "Cube Speicher Temperatur Oben"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 68
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Cube Speicher Temperatur Mitte"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 69
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Cube Speicher Temperatur Unten"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 70
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Cube Zapf Ist"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 202
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum HKR 1 VL"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 502
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum HKR 1 RL"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 503
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Soll HKR 1 VL"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 554
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ouvum Soll HKR 1 RL"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 556
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Soll Spreizwert"
+      unit_of_measurement: "K"
+      slave: 3
+      address: 555
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Aussentemperatur"
+      unit_of_measurement: "K"
+      slave: 3
+      address: 505
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Heizleistung"
+      unit_of_measurement: "kW"
+      slave: 3
+      address: 76
+      input_type: input
+      precision: 1
+      scale: 0.001
+      data_type: int16
