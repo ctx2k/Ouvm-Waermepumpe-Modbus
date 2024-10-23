@@ -1,0 +1,13 @@
+Informationen zum Register Betriebsart 
+
+Modbusadresse : yxy.... 
+
+
+
+- ID 0 = Standby
+- ID 1 = WARMWASSER
+- ID 2 = HEIZUNG
+- ID 3 = Extern
+- ID 4 = Kühlung
+- ID 5 = PHOTOVOLTAIK
+
