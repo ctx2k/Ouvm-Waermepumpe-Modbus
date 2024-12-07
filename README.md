@@ -1,9 +1,20 @@
+Ovum AC312P Modbus Konfiguration für Homeassistant 
 
-Grundgerüst wurde aus : https://github.com/MiScCX/ovModbus
-Hergestellt und entsprechend angepasst. 
+Im Teil 1 der Konfiguration wird driekt auf den Controller des Cube Speicher zugegriffen.
+Dieser muss dazu mit einem Lan Kabel angeschlossen sein und die entsprechende Firmware muss installiert sein.
 
-Ich habe eine Ovum ACP 312 
-Im Ornder ACP 312 wird die Wärmepumpe direkt per Modbus TCD ausgelesen. Also nicht über EPOC sondern ein RJ45 Kabel direkt auf den Controller im Cube Speicher
-Dazu muss die Software einen mindeststand vom Juni 2024 aufweisen.
 
-Software Regelung UP24 240626  
+
+Teil 2 regelt den Zugriff über das Epoca Modul, es werden Daten dort abgeholt die auf dem Ovum Controller nicht vorhanden sind. 
+
+###############
+
+
+Ovum AC312P Modbus configuration for Homeassistant 
+
+In part 1 of the configuration, the controller of the cube storage is accessed directly.
+This must be connected with a LAN cable and the corresponding firmware must be installed.
+
+
+
+Part 2 regulates access via the Epoca module, data is retrieved there that is not available on the Ovum controller. 
