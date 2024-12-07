@@ -1,6 +1,6 @@
 - name: modbus_ovum
   type: tcp
-  host: 192.xxxxxxxxxxxx
+  host: 192.xxxxx
   port: 502
   delay: 2
   message_wait_milliseconds: 30
@@ -22,6 +22,24 @@
       input_type: input
       precision: 1
       scale: 1
+      data_type: int16
+
+    - name: "Ovum Aussentemperatur"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 505
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Aussentemperatur (Mittel)"
+      unit_of_measurement: "°C"
+      slave: 3
+      address: 65
+      input_type: input
+      precision: 1
+      scale: 0.1
       data_type: int16
 
     - name: "Cube Speicher Temperatur Oben"
@@ -285,14 +303,6 @@
       scale: 0.1
       data_type: int16
 
-    - name: "Ovum Aussentemperatur (Mittel)"
-      unit_of_measurement: "°C"
-      slave: 3
-      address: 505
-      input_type: input
-      precision: 1
-      scale: 0.1
-      data_type: int16
 
     - name: "Ovum Raumsolltemp. HKR 1"
       unit_of_measurement: "°C"
@@ -392,18 +402,6 @@
       precision: 1
       scale: 1
       data_type: int16
-
-    - name: "Ovum COP Woche"
-      unit_of_measurement: "COP"
-      slave: 3
-      address: 588
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int32
-
-
-
 
       #Unbekannt
 
@@ -517,3 +515,85 @@
       precision: 1
       scale: 1
       data_type: int16
+
+#EPOCA Auslesung, diese Register funktionier so noch nicht. 
+- name: modbus_epoc
+  type: tcp
+  host: 192.xxxxxx
+  port: 502
+  delay: 2
+  message_wait_milliseconds: 30
+  timeout: 5
+  sensors:
+
+    - name: "EPOCA COP Woche"
+      unit_of_measurement: "COP"
+      slave: 247
+      address: 12589
+      input_type: holding
+      precision: 1
+      scale: 0.1
+      data_type: float32
+
+    - name: "EPOCA COP Monat"
+      unit_of_measurement: "COP"
+      slave: 247
+      address: 12599
+      input_type: holding
+      precision: 1
+      scale: 0.1
+      data_type: float32
+
+    - name: "EPOCA COP Jahr"
+      unit_of_measurement: "COP"
+      slave: 247
+      address: 12609
+      input_type: holding
+      precision: 1
+      scale: 0.1
+      data_type: float32
+
+    - name: "EPOCA COP Gesamt"
+      unit_of_measurement: "COP"
+      slave: 247
+      address: 12619
+      input_type: holding
+      precision: 1
+      scale: 0.1
+      data_type: float32
+
+    - name: "EPOCA Wärmemenge Woche"
+      unit_of_measurement: "kWh"
+      slave: 247
+      address: 12539
+      input_type: holding
+      precision: 1
+      scale: 0.001
+      data_type: float32
+
+    - name: "EPOCA Wärmemenge Monat"
+      unit_of_measurement: "kWh"
+      slave: 247
+      address: 12549
+      input_type: holding
+      precision: 1
+      scale: 0.001
+      data_type: float32
+
+    - name: "EPOCA Wärmemenge Jahr"
+      unit_of_measurement: "kWh"
+      slave: 247
+      address: 12559
+      input_type: holding
+      precision: 1
+      scale: 0.001
+      data_type: float32
+
+    - name: "EPOCA Wärmemenge Gesamt"
+      unit_of_measurement: "kWh"
+      slave: 247
+      address: 12569
+      input_type: holding
+      precision: 1
+      scale: 0.001
+      data_type: float32
