@@ -1,116 +1,76 @@
 Parameters	Label	Value	Measure unit
 Anzahl Neustarts	ResN	0	 
-Maximale Neustarts	Max 	3	 
 Betriebsart	BetA	1	 
-AussenT.durchschnitt	ATvz	1	 
-AussenT.durchschnitt	AT  	16.6	
-Manuell Modus	MIC4	0	 
-Man.Wert	VIC1	0.0	
+AussenT.durchschnitt	ATvz	0	 
+AussenT.durchschnitt	AT  	2.6	
 Power rps	RHpo	100	rpm
 Normal rps	RHno	100	rpm
 Silent rps	RHsi	65	rpm
 Rps AT Begrenzung	AT  	1	 
 Rps Max bei  AT -10°C	T-10	110	rps
 Rps Max bei  AT +18°C	T+18	60	rps
-Rps Inverter(P)	HrpP	800	 
-Rps Inverter(i)	HrpI	400	 
-Rps Inverter(d)	HrpD	200	 
 Speicher SollDiff.	Psod	6.0	K
-Speicher Solltemperatur	Psol	31.4	
-Temp. HZG-Speicher unten	Pist	24.3	
-Frostgrenzwert Außentemperatur	FrAT	4.0	
-Speicher min. (MK1)	Tmin	15.0	
-Dynamischer Puffer-Sollwert (nach WW)	DyON	0	 
-Dauer	DyDl	3600	s
-Offset	DyCo	2.0	K
+Speicher Solltemperatur	Psol	38.0	
+Temp. HZG-Speicher unten	Pist	52.3	
 MKR Funktion	H1fu	1	 
 Raumsollwert	H1Rs	21.0	
 PV Aktiviert	H1pb	0	 
 Pumpe Dauerbetrieb	H1Pd	1	 
-PV(+)	H1P+	0.0	K
-HKR1 Vorlauf	H1VL	24.7	
-HKR1 Rücklauf	H1RL	23.5	
-RL Solltemperatur	HReS	22.4	
-Hysterese	RLhy	2.0	K
-HK1 VL Soll	VLso	25.4	
+PV(+)	H1P+	5.0	K
+HKR1 Vorlauf	H1VL	26.1	
+HKR1 Rücklauf	H1RL	26.1	
+HK1 VL Soll	VLso	32.0	
 VL SollDiff.	VLsd	3.0	K
-VL Solltemp.Max	VL1m	50.0	
-HKR 1 Pumpe	AOC2	80.00	%
-HKP-AUS wenn WW	Wlo1	0	 
-Manuell Modus	MOC2	0	 
-Man.Wert	VOC2	0.00	%
-HKR1 Mischer	AOC3	82.00	%
-Minwert Mischer	Mmin	0.00	%
-Maxwert Mischer	Mmax	100.00	%
-Manuell Modus	AO3 	0	 
-Man.Wert	VOC3	0.00	%
+VL Solltemp.Max	VL1m	45.0	
+HKR1 Mischer	AOC3	0.00	%
 Mischer Invertieren	AO5i	1	 
-Automove Mischer	AMon	0	 
-Bei Soll/Ist-Abweichuung	AMdi	5.0	K
-Wartezeit	AMde	3600	s
 Heizgrenze	HG1 	18.0	
-Hysterese	H1hy	1.0	K
-Raumgerät Status	1RTo	3	 
-Heizkurve bei HG	C-HL	22.0	
-Heizkurve bei 0°C	C-0 	26.0	
-Heizkurve bei -15°C	C-15	35.0	
-Absenktemperatur diff.	AbsD	-2.0	K
+Heizkurve bei HG	C-HL	23.0	
+Heizkurve bei 0°C	C-0 	30.0	
+Heizkurve bei -15°C	C-15	36.0	
+Absenktemperatur diff.	AbsD	0.0	K
 Aufheiztemp.Diff.	AufD	4.0	K
 PV(+)	H2P+	1.0	K
 Betriebsart	WbAr	1	 
-WW Sollwert	Set1	42.0	
-WW Hysterese	Whys	5.0	K
+WW Sollwert	Set1	55.0	
+WW Hysterese	Whys	6.0	K
 WW Modus bei On	E0C1	1	 
 Aktiver Modus	Mode	1	 
-Max.SpeicherTemp	maxT	65.0	
-Temp. WW-Speicher oben	SpTo	41.5	
-Temp. WW-Speicher mitte	SpTm	40.6	
-Rps bei 0 dT	Wrp0	60	rps
-Rps bei 5 dT	Wrp5	70	rps
-Turbo (rps)	Trps	80	rps
-TURBO startet bei	Ttem	38.0	
+Temp. WW-Speicher oben	SpTo	51.0	
+Temp. WW-Speicher mitte	SpTm	51.4	
+TURBO startet bei	Ttem	39.0	
 Speicher SollMax	Smax	57.0	
-WW Sollwert	Set2	42.0	
-WW Ventil Modi(1=NC)	VoMo	0	 
+WW Sollwert	Set2	55.0	
 Legionellenfunktion	LeON	0	 
 WW Sollwert	LEsT	60.0	
 Intervall	Days	15	 
 Zapf Soll	DoTs	45.0	
-Zapf.Ist	DoT 	46.2	
+Zapf.Ist	DoT 	50.0	
 Strömungsschalter	FwSS	0	 
-Smart PWM	sPWM	1	 
-Pumpe MinWert	FPmi	16.00	%
 Umschichtdifferenz	UmSd	3.0	K
 UMS Pumpe Leist	UmPw	25.00	%
-Autonomie	PvAu	0	%
+Autonomie	PvAu	184	%
 PV Sperre	PVsp	0	 
 Photovoltaik Anforderung	PVrq	0	 
 PV Einschaltgrenze	P%on	130	%
 PV Verzögerung	PVon	1800	s
-PV Ausschaltgrenze	P%of	110	%
-PV Verzögerung	PVof	60	s
-Mind.Überschuss	PvKw	-0.10	kW
-PV Speicher Solltemp.	Set 	57.0	
-PVWatch Leistung	PvWa	0.15	kW
-PV(+)	SuPw	-0.15	kW
-Aufnahmeleistung WP	Verb	0.00	kW
-PVWatch Offset	Ofst	0.00	kW
+PV Ausschaltgrenze	P%of	30	%
+PV Verzögerung	PVof	1800	s
+Mind.Überschuss	PvKw	-1.00	kW
+PV Speicher Solltemp.	Set 	55.0	
+PVWatch Leistung	PvWa	-2.04	kW
+PV(+)	SuPw	4.46	kW
+Aufnahmeleistung WP	Verb	2.42	kW
 PV WW Aktivität	PVwa	0	 
-Temperaturpriorität	0W1H	1	 
-PV HZG Aktivität	PVhe	0	 
-Kühlventil	DOC2	0	 
-Manuell Modus	MC02	0	 
-Man.Wert	VC02	0	 
+PV HZG Aktivität	PVhe	3	 
 Power rps	RCpo	50	rpm
 Normal rps	RCno	40	rpm
 Silent rps	RCsi	35	rpm
 Rps bei dT 	dT2K	20	rps
 Rps bei dT 	dT6K	40	rps
 Hysterese Kühlung	ONhy	3.0	K
-Manuell Modus	MOE3	0	 
-Man.Wert	VOE3	0.00	%
 Sollwert	NkSo	95.0	
-Istwert	NkIs	23.8	
+Istwert	NkIs	49.5	
 Kühlkreis Min.	NCmm	19.0	 
 MK1 Kühlung Freigabe	C1fg	1	 
 Kühlanforderung	1KAn	0	 
@@ -138,24 +98,11 @@ WP bis max. WW	BWms	65.0
 2ST Anforderung  WW	E-Hw	1	 
 Position	BWpm	1	 
 Heizstab Betriebsart	2.sA	3	 
-PV Aktiviert	pvA 	0	 
-PV Leistung Gw	ON_A	6.50	kW
-PV Verzögerung	DlyA	5	s
-2.Stufe A	DOC7	0	 
-Manuell Modus	MC07	0	 
-Man.Wert	VC07	0	 
 Betriebsstunden	HrsA	0	h
 Heizstab Betriebsart	2.sB	0	 
-PV Aktiviert	pvB 	0	 
-PV Leistung Gw	ON_B	6.50	kW
-PV Verzögerung	DlyB	10	s
-2.Stufe B (Cube)	DOC3	0	 
-Manuell Modus	MC03	0	 
-Man.Wert	VC03	0	 
 Betriebsstunden	HrsB	0	h
 Aufheizprogramm aktiv	UhOn	0	 
 Aufheiztage	UhUp	7	 
 Haltezeit	UhSt	4	 
 Absenktage	UhLo	3	 
-Heizstab	UhEl	1	 
 Kaskaden Konfiguration	Modi	0	 
