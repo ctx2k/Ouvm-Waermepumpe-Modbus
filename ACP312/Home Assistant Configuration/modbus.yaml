@@ -1,6 +1,6 @@
 - name: modbus_ovum
   type: tcp
-  host: 192.xxxxx
+  host: 192.168.1.60
   port: 502
   delay: 2
   message_wait_milliseconds: 30
@@ -24,19 +24,19 @@
       scale: 1
       data_type: int16
 
-    - name: "Ovum Aussentemperatur"
+    - name: "Ovum Lufttemperatur"
       unit_of_measurement: "°C"
       slave: 3
-      address: 505
+      address: 65
       input_type: input
       precision: 1
       scale: 0.1
       data_type: int16
 
-    - name: "Ovum Aussentemperatur (Mittel)"
+    - name: "Ovum Aussentemperatur"
       unit_of_measurement: "°C"
       slave: 3
-      address: 65
+      address: 505
       input_type: input
       precision: 1
       scale: 0.1
@@ -516,17 +516,17 @@
       scale: 1
       data_type: int16
 
-#EPOCA Auslesung, diese Register funktionier so noch nicht. 
+#EPOCA Auslesung 
 - name: modbus_epoc
   type: tcp
-  host: 192.xxxxxx
+  host: 192.168.1.61
   port: 502
   delay: 2
   message_wait_milliseconds: 30
   timeout: 5
   sensors:
 
-    - name: "EPOCA COP Woche"
+    - name: "EPOCA COP_PV Woche"
       unit_of_measurement: "COP"
       slave: 247
       address: 12589
@@ -535,7 +535,7 @@
       scale: 0.1
       data_type: float32
 
-    - name: "EPOCA COP Monat"
+    - name: "EPOCA COP_PV Monat"
       unit_of_measurement: "COP"
       slave: 247
       address: 12599
@@ -544,7 +544,7 @@
       scale: 0.1
       data_type: float32
 
-    - name: "EPOCA COP Jahr"
+    - name: "EPOCA COP_PV Jahr"
       unit_of_measurement: "COP"
       slave: 247
       address: 12609
@@ -553,47 +553,11 @@
       scale: 0.1
       data_type: float32
 
-    - name: "EPOCA COP Gesamt"
+    - name: "EPOCA COP_PV Gesamt"
       unit_of_measurement: "COP"
       slave: 247
       address: 12619
       input_type: holding
       precision: 1
       scale: 0.1
-      data_type: float32
-
-    - name: "EPOCA Wärmemenge Woche"
-      unit_of_measurement: "kWh"
-      slave: 247
-      address: 12539
-      input_type: holding
-      precision: 1
-      scale: 0.001
-      data_type: float32
-
-    - name: "EPOCA Wärmemenge Monat"
-      unit_of_measurement: "kWh"
-      slave: 247
-      address: 12549
-      input_type: holding
-      precision: 1
-      scale: 0.001
-      data_type: float32
-
-    - name: "EPOCA Wärmemenge Jahr"
-      unit_of_measurement: "kWh"
-      slave: 247
-      address: 12559
-      input_type: holding
-      precision: 1
-      scale: 0.001
-      data_type: float32
-
-    - name: "EPOCA Wärmemenge Gesamt"
-      unit_of_measurement: "kWh"
-      slave: 247
-      address: 12569
-      input_type: holding
-      precision: 1
-      scale: 0.001
       data_type: float32
