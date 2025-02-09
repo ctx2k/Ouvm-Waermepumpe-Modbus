@@ -276,6 +276,15 @@
       scale: 1
       data_type: int16
 
+    - name: "Ovum HKR 1 Pumpe %"
+      unit_of_measurement: "%"
+      slave: 3
+      address: 500
+      input_type: input
+      precision: 1
+      scale: 0.01
+      data_type: int16
+
     - name: "Ovum HKR 1 VL"
       unit_of_measurement: "°C"
       slave: 3
