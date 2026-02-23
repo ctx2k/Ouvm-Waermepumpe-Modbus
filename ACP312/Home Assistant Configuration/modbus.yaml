@@ -1,24 +1,25 @@
 - name: modbus_ovum
   type: tcp
-  host: 192.168.1.60
+  host: 192.168.xxx.xxx
   port: 502
-  delay: 2
-  message_wait_milliseconds: 30
+  delay: 60
+  message_wait_milliseconds: 5
   timeout: 5
   sensors:
     - name: "Ovum Betriebsmeldung"
-      unit_of_measurement: "Binaer"
-      slave: 3
-      address: 4
-      input_type: input
-      precision: 1
+      unit_of_measurement: " "
+      slave: 247
+      address: 12338
+      input_type: holding
+      precision: 0
       scale: 1
-      data_type: int16
+      swap: word
+      data_type: int32
 
     - name: "Ovum Pumpe HKR1"
       unit_of_measurement: "Binaer"
-      slave: 3
-      address: 29
+      slave: 247
+      address: 16068
       input_type: input
       precision: 1
       scale: 1
@@ -26,8 +27,8 @@
 
     - name: "Ovum Lufttemperatur"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 65
+      slave: 247
+      address: 15428
       input_type: input
       precision: 1
       scale: 0.1
@@ -35,8 +36,26 @@
 
     - name: "Ovum Aussentemperatur"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 505
+      slave: 247
+      address: 15178
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum Aussentemperatur Durchschnitt"
+      unit_of_measurement: "°C"
+      slave: 247
+      address: 12388
+      input_type: input
+      precision: 1
+      scale: 0.1
+      data_type: int16
+
+    - name: "Ovum / Heizung: Aussentemperatur"
+      unit_of_measurement: "°C"
+      slave: 247
+      address: 15798
       input_type: input
       precision: 1
       scale: 0.1
@@ -44,8 +63,8 @@
 
     - name: "Cube Speicher Temperatur Oben"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 68
+      slave: 247
+      address: 12408
       input_type: input
       precision: 1
       scale: 0.1
@@ -53,8 +72,8 @@
 
     - name: "Cube Speicher Temperatur Mitte"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 69
+      slave: 247
+      address: 12418
       input_type: input
       precision: 1
       scale: 0.1
@@ -62,8 +81,8 @@
 
     - name: "Cube Speicher Temperatur Unten"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 70
+      slave: 247
+      address: 12428
       input_type: input
       precision: 1
       scale: 0.1
@@ -71,35 +90,29 @@
 
     - name: "Ovum Heizleistung"
       unit_of_measurement: "kW"
-      slave: 3
-      address: 76
-      input_type: input
-      precision: 1
-      scale: 0.001
-      data_type: int16
-
-    - name: "Ovum Drehzahl Ventilator"
-      unit_of_measurement: "%"
-      slave: 3
-      address: 87
+      scan_interval: 30  
+      slave: 247
+      address: 12368
       input_type: input
       precision: 1
       scale: 0.01
       data_type: int16
 
-    - name: "Ovum Betriebsstunden Kompressor"
-      unit_of_measurement: "h"
-      slave: 3
-      address: 88
+    - name: "Ovum Drehzahl Inverter"
+      unit_of_measurement: "rps"
+      scan_interval: 15
+      slave: 247
+      address: 12308
       input_type: input
-      precision: 1
+      precision: 0
       scale: 1
       data_type: int16
+      device_class: speed
 
     - name: "Ovum Niederdruck [LP]"
       unit_of_measurement: "bar"
-      slave: 3
-      address: 99
+      slave: 247
+      address: 12938
       input_type: input
       precision: 1
       scale: 0.1
@@ -107,8 +120,8 @@
 
     - name: "Ovum Hochdruck [HD]"
       unit_of_measurement: "bar"
-      slave: 3
-      address: 100
+      slave: 247
+      address: 12928
       input_type: input
       precision: 1
       scale: 0.1
@@ -116,8 +129,8 @@
 
     - name: "Ovum Heissgas [HG]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 101
+      slave: 247
+      address: 12948
       input_type: input
       precision: 1
       scale: 0.1
@@ -125,8 +138,8 @@
 
     - name: "Ovum Sauggas [SG]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 102
+      slave: 247
+      address: 12978
       input_type: input
       precision: 1
       scale: 0.1
@@ -134,8 +147,8 @@
 
     - name: "Ovum EG ein [EQin]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 103
+      slave: 247
+      address: 13048
       input_type: input
       precision: 1
       scale: 0.1
@@ -143,8 +156,8 @@
 
     - name: "Ovum EQ aus [EQou]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 104
+      slave: 247
+      address: 13058
       input_type: input
       precision: 1
       scale: 0.1
@@ -152,8 +165,8 @@
 
     - name: "Ovum Kondenstemperatur [Cond]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 105
+      slave: 247
+      address: 13018
       input_type: input
       precision: 1
       scale: 0.1
@@ -161,52 +174,49 @@
 
     - name: "Ovum Verdampfungstempetratur [Evap]"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 106
+      slave: 247
+      address: 13038
       input_type: input
       precision: 1
       scale: 0.1
-      data_type: int16
-
-    - name: "Ovum Drehzahl"
-      unit_of_measurement: "rps"
-      slave: 3
-      address: 121
-      input_type: input
-      precision: 1
-      scale: 1
       data_type: int16
 
     - name: "Cube Zapf Ist"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 202
+      slave: 247
+      address: 17018
       input_type: input
       precision: 1
       scale: 0.1
       data_type: int16
 
-    - name: "Cube Warmwasser Soll"
-      unit_of_measurement: "°C"
-      slave: 3
-      address: 215
-      input_type: input
-      precision: 1
-      scale: 0.1
-      data_type: int16
 
     - name: "Cube Zapf Soll"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 218
+      slave: 247
+      address: 17008
       input_type: input
       precision: 1
       scale: 0.1
       data_type: int16
+      
+    - name: "Ovum aktuelle Laufzeit" 
+      address: 12348
+      scan_interval: 15                
+      data_type: int32
+      scale: 1
+      precision: 0
+      swap: word
+      unit_of_measurement: "min"
+      input_type: holding
+      min_value: 0
+      max_value: 65535
+      slave: 247                    
+
 
     - name: "Ovum Betriebsstunden Inverter Impulse"
       unit_of_measurement: "imp."
-      slave: 3
+      slave: 247
       address: 400
       input_type: input
       precision: 1
@@ -215,8 +225,8 @@
 
     - name: "Ovum Betriebsstunden Heizbetrieb"
       unit_of_measurement: "h"
-      slave: 3
-      address: 401
+      slave: 247
+      address: 12358
       input_type: input
       precision: 1
       scale: 1
@@ -224,7 +234,7 @@
 
     - name: "Ovum Betriebsstunden Heizbetrieb Impulse"
       unit_of_measurement: "imp."
-      slave: 3
+      slave: 247
       address: 403
       input_type: input
       precision: 1
@@ -233,7 +243,7 @@
 
     - name: "Ovum Betriebsstunden FWS Pumpe"
       unit_of_measurement: "h"
-      slave: 3
+      slave: 247
       address: 413
       input_type: input
       precision: 1
@@ -242,7 +252,7 @@
 
     - name: "Ovum Betriebsstunden Abtauen"
       unit_of_measurement: "h"
-      slave: 3
+      slave: 247
       address: 425
       input_type: input
       precision: 1
@@ -251,7 +261,7 @@
 
     - name: "Ovum Autarkiegrad im Überschussbetrieb"
       unit_of_measurement: "%"
-      slave: 3
+      slave: 247
       address: 449
       input_type: input
       precision: 1
@@ -260,16 +270,16 @@
 
     - name: "Ovum PV-Watch Messwert"
       unit_of_measurement: "kW"
-      slave: 3
-      address: 455
+      slave: 247
+      address: 12378
       input_type: input
       precision: 1
       scale: 0.01
       data_type: int16
 
     - name: "Ovum Betriebsart Heizung"
-      unit_of_measurement: "Binaer"
-      slave: 3
+      unit_of_measurement: ""
+      slave: 247
       address: 499
       input_type: input
       precision: 1
@@ -278,7 +288,7 @@
 
     - name: "Ovum HKR 1 Pumpe %"
       unit_of_measurement: "%"
-      slave: 3
+      slave: 247
       address: 500
       input_type: input
       precision: 1
@@ -287,17 +297,28 @@
 
     - name: "Ovum HKR 1 VL"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 502
+      slave: 247
+      address: 16088
       input_type: input
       precision: 1
       scale: 0.1
       data_type: int16
 
+    - name: "Ovum HKR 1: Mischer"         
+      unique_id: ovum_AOC3_sensor16198
+      address: 16198             
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "%"
+      input_type: holding
+      slave: 247     
+
     - name: "Ovum HKR 1 RL"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 503
+      slave: 247
+      address: 16098
       input_type: input
       precision: 1
       scale: 0.1
@@ -305,8 +326,8 @@
 
     - name: "Ovum Temp. Heizungsspeicher"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 504
+      slave: 247
+      address: 15948
       input_type: input
       precision: 1
       scale: 0.1
@@ -315,8 +336,8 @@
 
     - name: "Ovum Raumsolltemp. HKR 1"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 524
+      slave: 247
+      address: 16048
       input_type: input
       precision: 1
       scale: 0.1
@@ -324,8 +345,8 @@
 
     - name: "Ovum Soll HKR 1 VL"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 554
+      slave: 247
+      address: 16128
       input_type: input
       precision: 1
       scale: 0.1
@@ -333,17 +354,8 @@
 
     - name: "Ovum Soll Spreizwert"
       unit_of_measurement: "K"
-      slave: 3
-      address: 555
-      input_type: input
-      precision: 1
-      scale: 0.1
-      data_type: int16
-
-    - name: "Ouvum Soll HKR 1 RL"
-      unit_of_measurement: "°C"
-      slave: 3
-      address: 556
+      slave: 247
+      address: 16128
       input_type: input
       precision: 1
       scale: 0.1
@@ -351,8 +363,8 @@
 
     - name: "Ovum Speichersolltemp. PV+ Betrieb"
       unit_of_measurement: "°C"
-      slave: 3
-      address: 699
+      slave: 247
+      address: 17208
       input_type: input
       precision: 1
       scale: 0.1
@@ -360,7 +372,7 @@
 
     - name: "Ovum Sollwertanhebung Warmwasser bei PV+"
       unit_of_measurement: "°C"
-      slave: 3
+      slave: 247
       address: 699
       input_type: input
       precision: 1
@@ -369,7 +381,7 @@
 
     - name: "Ovum Elektrische Energie"
       unit_of_measurement: "kW"
-      slave: 3
+      slave: 247
       address: 707
       input_type: input
       precision: 1
@@ -378,7 +390,7 @@
 
     - name: "Ovum Sollwert PV-Watch TCP"
       unit_of_measurement: "kW"
-      slave: 3
+      slave: 247
       address: 709
       input_type: input
       precision: 1
@@ -387,7 +399,7 @@
 
     - name: "Ovum Sollwert Leistungsaufnahme TCP"
       unit_of_measurement: "kW"
-      slave: 3
+      slave: 247
       address: 710
       input_type: input
       precision: 1
@@ -396,177 +408,136 @@
 
     - name: "Ovum PV-Anforderung Aktiv"
       unit_of_measurement: "Binaer"
-      slave: 3
-      address: 749
+      slave: 247
+      address: 17288
       input_type: input
       precision: 1
       scale: 1
       data_type: int16
+
+    - name: "Ovum Eev: % Stellventil offen"         
+      address: 13308
+      scan_interval: 15                
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "%"
+      input_type: holding
+      min_value: 0.0
+      max_value: 655.34
+      slave: 247 
+
+
+    - name: "Ovum Heizungsleistung: Woche"         
+      address: 12538
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "kWh"
+      input_type: holding
+      slave: 247                    
+      device_class: energy
+
+    - name: "Ovum Heizungsleistung: Monat"         
+      address: 12548
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "kWh"
+      input_type: holding
+      slave: 247                    
+      device_class: energy
+
+    - name: "Ovum Heizungsleistung: Jahr"         
+      address: 12558       
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "kWh"
+      input_type: holding
+      slave: 247                    
+      device_class: energy
+
+    - name: "Ovum Heizungsleistung: Gesamt"         
+      address: 12568              
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "kWh"
+      input_type: holding
+      slave: 247                    
+      device_class: energy
 
     - name: "Ovum Status Wärmepumpe"
       unit_of_measurement: "Binaer"
       slave: 3
-      address: 1999
+      address: 18298
       input_type: input
       precision: 1
       scale: 1
       data_type: int16
-
-      #Unbekannt
-
-
-    - name: "Unbekannt 21"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 21
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 31"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 31
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 41"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 41
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 81"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 81
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 91"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 91
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 111"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 111
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 121"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 121
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-
-    - name: "Unbekannt 231"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 231
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 241"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 241
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 251"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 251
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-
-    - name: "Unbekannt 421"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 251
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-    - name: "Unbekannt 551"
-      unit_of_measurement: "unbekannt"
-      slave: 3
-      address: 551
-      input_type: input
-      precision: 1
-      scale: 1
-      data_type: int16
-
-#EPOCA Auslesung 
-- name: modbus_epoc
-  type: tcp
-  host: 192.168.1.61
-  port: 502
-  delay: 2
-  message_wait_milliseconds: 30
-  timeout: 5
-  sensors:
-
-    - name: "EPOCA COP_PV Woche"
-      unit_of_measurement: "COP"
-      slave: 247
-      address: 12589
+##  Neu ab 13.11.2025
+    - name: "Ovum Ventilator Geschwindigkeit"         
+      unique_id: ovum_AOE5_sensor14758
+      address: 14758
+      scan_interval: 15                
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "%"
       input_type: holding
-      precision: 1
-      scale: 0.1
-      data_type: float32
+      slave: 247 
 
-    - name: "EPOCA COP_PV Monat"
-      unit_of_measurement: "COP"
-      slave: 247
-      address: 12599
-      input_type: holding
-      precision: 1
+    - name: "Durchfluss Sensor"         
+      unique_id: ovum_Flow_sensor14068
+      address: 14068
+      scan_interval: 15                
+      data_type: int32
       scale: 0.1
-      data_type: float32
-
-    - name: "EPOCA COP_PV Jahr"
-      unit_of_measurement: "COP"
-      slave: 247
-      address: 12609
-      input_type: holding
       precision: 1
-      scale: 0.1
-      data_type: float32
-
-    - name: "EPOCA COP_PV Gesamt"
-      unit_of_measurement: "COP"
-      slave: 247
-      address: 12619
+      swap: word
+      unit_of_measurement: "l/min"
       input_type: holding
-      precision: 1
+      slave: 247                    
+      device_class: volume
+    - name: "Heisgass Soll [HG soll]"         
+      unique_id: ovum_HGso_sensor12958
+      address: 12958
+      scan_interval: 120               
+      data_type: int32
       scale: 0.1
-      data_type: float32
+      precision: 1
+      swap: word
+      unit_of_measurement: "°C"
+      input_type: holding
+      slave: 247                    
+      device_class: temperature
+    - name: "EQ Pumpe"         
+      unique_id: ovum_AOE1_sensor13068
+      address: 13068
+      scan_interval: 60                
+      data_type: int32
+      scale: 0.01
+      precision: 2
+      swap: word
+      unit_of_measurement: "%"
+      input_type: holding
+      slave: 247                    
+    - name: "WW Sollwert"         
+      unique_id: ovum_Set1_sensor16818
+      address: 16818
+      scan_interval: 360               
+      data_type: int32
+      scale: 0.1
+      precision: 1
+      swap: word
+      unit_of_measurement: "°C"
+      input_type: holding
+      slave: 247                    
+      device_class: temperature      
